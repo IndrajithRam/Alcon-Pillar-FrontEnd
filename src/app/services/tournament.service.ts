@@ -25,7 +25,7 @@ export class TournamentService {
       })
     };
   constructor(private http: HttpClient) {
-    this.baseUrl = `${PROTOCOL}://${location.hostname}:${PORT}/`;
+    this.baseUrl = `https://alcon-pillar-backend.onrender.com`;
   }
   getTournamentList(): Observable<Tournament[]> {
     return this.http.get<Tournament[]>(this.baseUrl + "tournamentList");
@@ -99,7 +99,7 @@ export class TournamentService {
     this.user = user;
   }
 
-  clearStorageData(){
+  clearStorageData() {
     localStorage.clear();
   }
 
