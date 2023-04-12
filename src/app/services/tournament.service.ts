@@ -25,7 +25,7 @@ export class TournamentService {
       })
     };
   constructor(private http: HttpClient) {
-    this.baseUrl = `https://alcon-pillar-backend.onrender.com`;
+    this.baseUrl = `https://alcon-pillar-backend.onrender.com/`;
   }
   getTournamentList(): Observable<Tournament[]> {
     return this.http.get<Tournament[]>(this.baseUrl + "tournamentList");
