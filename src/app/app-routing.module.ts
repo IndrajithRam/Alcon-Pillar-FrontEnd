@@ -7,11 +7,20 @@ import { TournamentComponent } from './views/tournament/tournament.component';
 import { LoginComponent } from './views/login/login.component';
 import { RegisterComponent } from './views/register/register.component';
 import { AuthGuard } from './services/auth.guard';
+import { ErrorComponent } from './views/error/error.component';
 
 const routes: Routes = [
   {
     path: 'home',
     component: HomeComponent, data: { title: 'Home' },
+  },
+  {
+    path: '',
+    component: HomeComponent, data: { title: 'Home' },
+  },
+  {
+    path: 'error',
+    component: ErrorComponent
   },
   { path: 'tournamentsList', component: TournamentComponent, data: { title: 'Tournament' } },
   { path: 'displayAddTournament', component: AddTournamentComponent, data: { title: 'Add Tournament' }, canActivate: [AuthGuard] },
@@ -21,7 +30,9 @@ const routes: Routes = [
   { path: 'tournamentsList', component: TournamentComponent },
   { path: 'login', component: LoginComponent, data: { title: 'Login' } },
   //{ path: 'register', component: RegisterComponent, data: { title: 'Register' } },
-  { path: '', component: HomeComponent }
+  {
+    path: '*', redirectTo: ''
+  }
 ];
 
 @NgModule({

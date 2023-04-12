@@ -14,6 +14,7 @@ import { AddTournamentComponent } from './views/add-tournament/add-tournament.co
 import { FormsModule } from '@angular/forms';
 import { EditTournamentComponent } from './views/edit-tournament/edit-tournament.component';
 import { JwtModule } from '@auth0/angular-jwt';
+import { ErrorComponent } from './views/error/error.component';
 export function jwtTokenGetter(): string|any
 {
   localStorage.getItem('id_token');
@@ -29,7 +30,8 @@ export function jwtTokenGetter(): string|any
     HeaderComponent,
     FooterComponent,
     AddTournamentComponent,
-    EditTournamentComponent
+    EditTournamentComponent,
+    ErrorComponent
   ],
   imports: [
     BrowserModule,
