@@ -9,17 +9,18 @@ import { RegisterComponent } from './views/register/register.component';
 import { AuthGuard } from './services/auth.guard';
 
 const routes: Routes = [
-  { path: 'home', 
-  component: HomeComponent, data: { title: 'Home' },
+  {
+    path: 'home',
+    component: HomeComponent, data: { title: 'Home' },
   },
   { path: 'tournamentsList', component: TournamentComponent, data: { title: 'Tournament' } },
-  { path: 'displayAddTournament', component: AddTournamentComponent, data: { title: 'Add Tournament' }, canActivate:[AuthGuard] },
+  { path: 'displayAddTournament', component: AddTournamentComponent, data: { title: 'Add Tournament' }, canActivate: [AuthGuard] },
   // { path: 'displayEditTournament', component: EditTournamentComponent, data: { title: 'edit Tournament' } },
-  { path: 'tournamentsList/:mode', component: EditTournamentComponent,canActivate:[AuthGuard] },
-  { path: 'tournamentsList/edit/:id', component: EditTournamentComponent , canActivate:[AuthGuard]},
+  { path: 'tournamentsList/:mode', component: EditTournamentComponent, canActivate: [AuthGuard] },
+  { path: 'tournamentsList/edit/:id', component: EditTournamentComponent, canActivate: [AuthGuard] },
   { path: 'tournamentsList', component: TournamentComponent },
   { path: 'login', component: LoginComponent, data: { title: 'Login' } },
-  { path: 'register', component: RegisterComponent, data: { title: 'Register' } },
+  //{ path: 'register', component: RegisterComponent, data: { title: 'Register' } },
   { path: '', component: HomeComponent }
 ];
 
