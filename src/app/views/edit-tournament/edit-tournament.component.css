@@ -5,3 +5,7 @@ h1 {
   font-family: monospace;
   margin-top: 10%;
 }
+
+body {
+  text-align: center;
+}
