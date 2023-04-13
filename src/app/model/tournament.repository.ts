@@ -1,11 +1,10 @@
-import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs/internal/Observable';
-import { TournamentService } from '../services/tournament.service';
-import { Tournament } from './tournament.model';
+import { Injectable } from "@angular/core";
+import { Observable } from "rxjs/internal/Observable";
+import { TournamentService } from "../services/tournament.service";
+import { Tournament } from "./tournament.model";
 
 @Injectable()
 export class TournamentRepository {
-
   private tournaments: Tournament[] = [];
   constructor(private tournamentService: TournamentService) {
     this.tournamentService = tournamentService;
@@ -15,6 +14,13 @@ export class TournamentRepository {
   }
 
   getTournaments(): Tournament[] {
+    return this.tournaments;
+  }
+
+  getUpdatedTournamentsList(): Tournament[] {
+    this.tournamentService.getTournamentList().subscribe((data) => {
+      this.tournaments = data;
+    });
     return this.tournaments;
   }
 
@@ -45,5 +51,4 @@ export class TournamentRepository {
       );
     });
   }
-
 }
