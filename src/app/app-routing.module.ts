@@ -30,9 +30,7 @@ const routes: Routes = [
   { path: 'tournamentsList', component: TournamentComponent },
   { path: 'login', component: LoginComponent, data: { title: 'Login' } },
   { path: 'register', component: RegisterComponent, data: { title: 'Register' } },
-  {
-    path: '*', redirectTo: ''
-  }
+  
 ];
 
 @NgModule({
