@@ -29,7 +29,7 @@ const routes: Routes = [
   { path: 'tournamentsList/edit/:id', component: EditTournamentComponent, canActivate: [AuthGuard] },
   { path: 'tournamentsList', component: TournamentComponent },
   { path: 'login', component: LoginComponent, data: { title: 'Login' } },
-  //{ path: 'register', component: RegisterComponent, data: { title: 'Register' } },
+  { path: 'register', component: RegisterComponent, data: { title: 'Register' } },
   {
     path: '*', redirectTo: ''
   }
